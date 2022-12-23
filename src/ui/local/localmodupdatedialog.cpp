@@ -117,7 +117,7 @@ LocalModUpdateDialog::LocalModUpdateDialog(QWidget *parent, LocalModPath *modPat
                     ui->updateTreeView->setIndexWidget(model_.indexFromItem(afterItem), comboBox);
                     for(const auto &fileInfo : mod->modrinthUpdater().updateFileInfos())
                         comboBox->addItem(fileInfo.displayName());
-                    afterItem->setToolTip(getToolTip(mod->curseforgeUpdater().updateFileInfos().first()));
+                    afterItem->setToolTip(getToolTip(mod->modrinthUpdater().updateFileInfos().first()));
                     connect(comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [=](int index){
                         auto &fileInfo = mod->modrinthUpdater().updateFileInfos().at(index);
                         afterItem->setData(index);
