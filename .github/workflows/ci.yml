@@ -20,7 +20,7 @@ jobs:
     needs:
       - build-on-ubuntu
       - build-on-win-mingw
-      - build-on-osx
+      # - build-on-osx
     steps:
       - uses: actions/checkout@v2
         with:
